@@ -4,6 +4,13 @@ header {
 	padding: 30px 20px;
 }
 
+input {
+	padding: 10px;
+	margin: 20px;
+	background-color: #00A6B3;
+	color: white;
+}
+
 nav {
 	background-color: #00A6B3;
 	color: #FFFFFF;
