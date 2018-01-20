@@ -80,10 +80,6 @@ var createBoard = function() {
 }
 
 
-// Develop Play Again for new round
-
-
-// Keep track of wins/losses
 
 createBoard();
 
