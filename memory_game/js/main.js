@@ -22,6 +22,25 @@ var cards = [
 	cardImage: "images/king-of-diamonds.png"
 }
 ];
+//function for shuffling cards --- first step of createBoard
+var shuffle = function(array) {
+  var currentIndex = cards.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 var cardsInPlay = [];
 //check for matching cards once user flips 2 cards
@@ -32,6 +51,8 @@ alert("You found a match!");
 alert("Sorry, try again.");
 }
 }
+
+
 // flip a card once clicked
 var flipCard = function () {
 	var cardId = this.getAttribute('data-id');
@@ -45,8 +66,10 @@ if (cardsInPlay.length === 2) {
 	}	
 }
 
-//create board on page load.  4 cards displayed face down
+//create board on page load.  4 cards displayed face down randomly with shuffle function
 var createBoard = function() {
+	shuffle(cards);
+
 	for (var i = 0; i < cards.length; i++) {
 	var cardElement = document.createElement('img');
 	cardElement.setAttribute('src', 'images/back.png');
@@ -56,6 +79,11 @@ var createBoard = function() {
 }
 }
 
+
+// Develop Play Again for new round
+
+
+// Keep track of wins/losses
 
 createBoard();
 
